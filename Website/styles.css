@@ -1,0 +1,302 @@
+﻿body {
+    font-family: "Roboto", sans-serif;
+    font-weight: 700;
+    font-style: italic;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+
+    background-image: url('background.jpg');
+    background-repeat: repeat; /* Adjust as needed */
+    background-size: cover; /* Ensures the image covers the entire background */
+}
+
+
+/* Add the Montserrat font for paragraphs in all sections */
+section p {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+}
+
+header {
+    background-color: transparent; /* Transparent background */
+    padding: 10px 0;
+    position: fixed; /* Fixed position */
+    width: 100%;
+    z-index: 1; /* Ensure navigation bar is above other elements */
+}
+
+nav {
+    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
+    padding: 10px 20px; /* Adjust padding as needed */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add shadow */
+}
+
+    nav ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+    }
+
+        nav ul li {
+            display: inline-block;
+            margin-left: 20px; /* Adjust spacing between menu items */
+            height: 50px; /* Ensure consistent height for navigation bar items */
+        }
+
+            nav ul li:first-child {
+                margin-left: 0; /* Remove margin for the first menu item */
+            }
+
+            nav ul li a {
+                color: white;
+                text-decoration: none;
+                font-weight: bold;
+                font-size: 24px; /* Increase font size */
+                transition: all 0.3s ease; /* Smooth transition effect */
+                display: flex; /* Center text horizontally */
+                justify-content: center; /* Center text horizontally */
+                align-items: center; /* Center text vertically */
+                height: 50px; /* Ensure consistent height for navigation bar items */
+            }
+
+                nav ul li a:hover {
+                    background-color: #333; /* Highlight on hover */
+                    border-radius: 5px; /* Rounded corners */
+                }
+
+.hero {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    margin-top: 0; /* Remove margin */
+    background: url('hero.jpg') no-repeat center center/cover;
+}
+
+.hero-image {
+    width: 100%;
+    height: auto;
+    z-index: -1; /* Move the image behind other elements */
+}
+
+main {
+    padding: 20px;
+}
+
+/* Other styles for sections, introduction, story, footer */
+
+section {
+    margin-bottom: 40px;
+    padding: 20px;
+    background: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+h1 {
+    color: #e60012;
+    text-align: center;
+    font-size: 2em;
+}
+
+.introduction-item {
+    display: inline-block;
+    width: auto; /* Adjusted to auto to accommodate content */
+    font-size: 50px;
+    font-weight: bold;
+    white-space: nowrap; /* Prevents text from wrapping */
+    color: #333; /* Dark grey color */
+}
+
+.introduction-header {
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    height: 50px;
+}
+
+.scrolling-introduction {
+    position: absolute;
+    top: 0;
+    left: 0;
+    animation: scroll 20s linear infinite; /* Adjust animation duration as needed */
+}
+
+.introduction-item:nth-child(even) {
+    color: green; /* Alternate color */
+}
+
+.introduction-section h1 {
+    margin-bottom: 1in; /* 1 inch spacing */
+}
+
+@keyframes scroll {
+    0% {
+        transform: translateX(0%);
+    }
+
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+
+/* Style for section header */
+.section-header {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+    .section-header h1 {
+        color: green;
+        font-size: 50px;
+    }
+
+/* Style for Trailer and Where to Watch section headers */
+#trailer .section-header h1,
+#where-to-watch .section-header h1 {
+    color: green !important; /* Ensure the color change takes precedence */
+    font-size: 50px;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+/* Style for Footer header */
+footer {
+    background-color: #000;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+
+
+/* Center all paragraphs */
+section p {
+    text-align: center;
+}
+
+/* Center the YouTube video */
+.trailer-container {
+    text-align: center;
+}
+
+/* Spacing between heading and paragraph */
+h1 {
+    margin-bottom: 1in; /* 1 inch spacing */
+}
+
+/* Spacing between paragraphs */
+p {
+    margin-bottom: 1.5cm; /* 1.5 cm spacing */
+}
+
+/* Transparent background for all sections */
+section {
+    background-color: transparent;
+}
+
+/* Responsive YouTube video container */
+.trailer-container {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 aspect ratio (divide 9 by 16 = 0.5625) */
+    padding-top: 30px;
+    height: 0;
+    overflow: hidden;
+}
+
+    .trailer-container iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+
+
+
+/* Styles for login page */
+.login-section {
+    text-align: center;
+    margin-top: 50px;
+}
+
+    .login-section form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .login-section label {
+        margin-bottom: 10px;
+    }
+
+    .login-section input {
+        padding: 10px;
+        margin-bottom: 20px;
+    }
+
+    .login-section button {
+        padding: 10px 20px;
+        background-color: #333;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+
+        .login-section button:hover {
+            background-color: #555;
+        }
+
+
+/* Basic styling for the signup modal */
+.signup-modal {
+    display: none; /* Hidden by default */
+    position: fixed;
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+.signup-modal-content {
+    background-color: #fefefe;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+    .close:hover,
+    .close:focus {
+        color: black;
+        text-decoration: none;
+        cursor: pointer;
+    }
+
+.image-container {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.adaptable-image {
+    max-width: 100%;
+    height: auto;
+}

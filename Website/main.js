@@ -28,7 +28,7 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 
-    /// Show signup modal when signup link is clicked
+    // Show signup modal when signup link is clicked
     document.getElementById('signup-link').addEventListener('click', function (e) {
         e.preventDefault();
         document.querySelector('.signup-modal').style.display = 'block';
@@ -37,6 +37,13 @@ document.addEventListener('DOMContentLoaded', function () {
     // Close signup modal when close button is clicked
     document.querySelector('.close').addEventListener('click', function () {
         document.querySelector('.signup-modal').style.display = 'none';
+    });
+
+    // Close signup modal when clicking outside of the modal
+    window.addEventListener('click', function (event) {
+        if (event.target.classList.contains('signup-modal')) {
+            document.querySelector('.signup-modal').style.display = 'none';
+        }
     });
 
     // Handle login form submission
@@ -51,4 +58,40 @@ document.addEventListener('DOMContentLoaded', function () {
         document.querySelector('.signup-modal').style.display = 'none'; // Close the modal
         window.location.href = 'index.html'; // Redirect to index.html
     });
+
+    // Remove the first Google Sign-In button found in the document
+    const googleSignInButton = document.querySelector('.g_id_signin');
+    if (googleSignInButton) {
+        googleSignInButton.remove();
+    }
+
+    // Google Sign-In callback function
+    window.handleCredentialResponse = function (response) {
+        const data = jwt_decode(response.credential);
+        console.log(data); // Use this data to authenticate the user on your server
+        // Redirect to index.html
+        window.location.href = 'index.html';
+    };
+
+    // Initialize Google Sign-In
+    const googleSignInDiv = document.createElement('div');
+    googleSignInDiv.id = 'g_id_onload';
+    googleSignInDiv.dataset.clientId = 'YOUR_GOOGLE_CLIENT_ID'; // Replace with your actual Google Client ID
+    googleSignInDiv.dataset.callback = 'handleCredentialResponse';
+    document.body.appendChild(googleSignInDiv);
+
+    const googleSignInContainer = document.createElement('div');
+    googleSignInContainer.className = 'google-signin-container';
+    const googleSignInButtonAfterLogin = document.createElement('div');
+    googleSignInButtonAfterLogin.className = 'g_id_signin';
+    googleSignInButtonAfterLogin.dataset.type = 'standard';
+    googleSignInContainer.appendChild(googleSignInButtonAfterLogin);
+    document.querySelector('.login-section').appendChild(googleSignInContainer);
+
+    // Load the Google Sign-In script
+    const googleSignInScript = document.createElement('script');
+    googleSignInScript.src = 'https://accounts.google.com/gsi/client';
+    googleSignInScript.async = true;
+    googleSignInScript.defer = true;
+    document.head.appendChild(googleSignInScript);
 });

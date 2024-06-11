@@ -1,4 +1,5 @@
-﻿body {
+/* General styles */
+body {
     font-family: "Roboto", sans-serif;
     font-weight: 700;
     font-style: italic;
@@ -6,12 +7,10 @@
     padding: 0;
     background-color: #f4f4f4;
     color: #333;
-
     background-image: url('background.jpg');
     background-repeat: repeat; /* Adjust as needed */
     background-size: cover; /* Ensures the image covers the entire background */
 }
-
 
 /* Add the Montserrat font for paragraphs in all sections */
 section p {
@@ -141,7 +140,6 @@ h1 {
     }
 }
 
-
 /* Style for section header */
 .section-header {
     text-align: center;
@@ -172,8 +170,6 @@ footer {
     bottom: 0;
     width: 100%;
 }
-
-
 
 /* Center all paragraphs */
 section p {
@@ -217,8 +213,6 @@ section {
         height: 100%;
     }
 
-
-
 /* Styles for login page */
 .login-section {
     text-align: center;
@@ -248,12 +242,13 @@ section {
         border-radius: 5px;
         cursor: pointer;
         transition: background-color 0.3s ease;
+        width: 200px; /* Set button width */
+        margin-bottom: 20px; /* Add margin to separate from Google Sign-In button */
     }
 
         .login-section button:hover {
             background-color: #555;
         }
-
 
 /* Basic styling for the signup modal */
 .signup-modal {
@@ -299,4 +294,9 @@ section {
 .adaptable-image {
     max-width: 100%;
     height: auto;
+}
+
+.google-signin-container {
+    width: 200px; /* Set container width to match login button */
+    margin: 0 auto; /* Center the Google Sign-In button */
 }
